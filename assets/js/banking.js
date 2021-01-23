@@ -45,3 +45,35 @@ function deposit(balance) {
 
 
 }
+
+// ========================================= Withdrawal =====================================================
+
+function withdraw(balance) {
+    if (balance <= 50) {
+        console.log("We are sorry your current balance is insufficient for a withdrawal");
+
+    } else {
+        const amount = prompt("Enter amount you want to withdraw: ");
+        if (amount > balance - 50) {
+            console.log("We are sorry your current balance is insufficient for a withdrawal of such amount");
+        } else {
+            balance = balance - amount;
+            console.log("You have withdrawn " + amount + "ETB. \n Your current balance is: " + balance + " ETB");
+        }
+
+    }
+
+
+}
+
+
+// ======================================== Balance ============================================================
+
+function checkBalance(balance) {
+
+    console.log(balance + " ETB");
+
+
+}
+
+// ==============================================================================================================
