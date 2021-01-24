@@ -47,6 +47,74 @@ person3.Balance = 500;
 
 
 
+(function() {
+    var customers = [person1, person2, person3];
+    var names = [person1.Name, person2.Name, person3.Name];
+    var passwords = [person1.Password, person2.Password, person3.Password];
+    var nameIndex = function(name) {
+        return names.indexOf(name);
+    };
+
+
+    var inputName = prompt("Enter your name: ");
+
+    if (names.includes(inputName)) {
+
+
+
+        index = nameIndex(inputName);
+
+        var password = prompt("Enter your password: ");
+
+        if (passwords[index] == password) {
+
+            var balance = customers[index].Balance;
+
+            var service = prompt(
+                "Dear Customer, what do you want to do today? \n 1 = Deposit \n 2 = Withdraw \n  3 = Balance \n  4 = Transfer"
+            );
+
+            switch (service) {
+                case "1":
+                    deposit(balance);
+                    break;
+
+                case "2":
+                    withdraw(balance);
+                    break;
+
+
+
+                case "3":
+                    checkBalance(balance);
+                    break;
+
+
+                case "4":
+                    transfer(balance);
+                    break;
+
+            }
+
+
+
+
+
+        } else {
+            console.log("Incorrect Password");
+        }
+    } else {
+
+
+        console.log("There is no customer by that name");
+    }
+
+
+
+
+
+})();
+
 
 
 
